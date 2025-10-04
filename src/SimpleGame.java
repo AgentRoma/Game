@@ -17,7 +17,7 @@ public class SimpleGame {
          int monsterPower = 4;
 
         System.out.println("Game Started");
-        System.out.println("Hero " + heroName + " etered the forest and see behind him  monster " + monsterName );
+        System.out.println("Hero " + heroName + " entered the forest and see behind him  monster " + monsterName );
 
 
         // logic of hero turn
@@ -57,7 +57,7 @@ public class SimpleGame {
                 System.out.println("Monster win");
                 break;
             } else if(monsterComand == 0){
-                System.out.println("monster decide to defend himself and heald 1 point of HP");
+                System.out.println("monster decide to defend himself and heald 5 point of HP");
                 monsterHP += 5;
             }
             System.out.println("State of the game. Hero " + heroName + " has " + heroHP + "HP " + ", monster " + monsterName + " has " + monsterHP + "HP");

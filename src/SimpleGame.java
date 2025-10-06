@@ -13,9 +13,12 @@ public class SimpleGame{
     static int monsterPower;
     static Scanner sc = new Scanner(System.in);
     static Random rand = new Random();
+    static String answer;
+    static boolean playAgain = true;
 
     public static void main(String[] args) {
 
+        while (playAgain){
         init();
 
         System.out.println("Game Started");
@@ -24,20 +27,37 @@ public class SimpleGame{
 
         while (true) {
             heroTurn();
-            if(isGameOver()){
+            if (isGameOver()) {
                 break;
             }
             printStatistic();
             monsterTurn();
-            if(isGameOver()){
+            if (isGameOver()) {
                 break;
             }
             printStatistic();
 
         }
 
-        System.out.println("game ended");
+        System.out.println("game ended would you try again ? yes or no ");
+        answer = sc.next();
+        switch(answer){
+            case "yes":
+                playAgain = true;
+                break;
+            case "no":
+                playAgain = false;
+                System.out.println("Okay,game over have a good day");
+                break;
+            default:
+                System.out.println("wrong answer, program ended restart to play again");
+                break;
+
+        }
+        }
+
     }
+
         public static boolean isGameOver(){
         if(heroHP <= 0){
             System.out.println("Monster win");
@@ -58,7 +78,7 @@ public class SimpleGame{
                 System.out.println("Hero attack Monster " + monsterName + " take " + heroPower + " points of damage");
                 monsterHP -= heroPower;
                 if (rand.nextInt(100) < 20) {
-                    System.out.println("Hero gave additional damage " + heroPower + "points of damage");
+                    System.out.println("Hero gave additional damage " + heroPower + " points of damage");
                     monsterHP -= heroPower;
                 }
             } else if (chose == 2) {
@@ -85,7 +105,7 @@ public class SimpleGame{
             System.out.println();
             System.out.println("State of the game");
             System.out.println(" Hero " + heroName + " HP: " + heroHP);
-            System.out.println("Monster " + monsterName + "HP: " + monsterHP);
+            System.out.println("Monster " + monsterName + " HP: " + monsterHP);
             System.out.println();
         }
 

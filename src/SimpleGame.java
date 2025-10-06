@@ -119,7 +119,7 @@ public class SimpleGame{
             heroMoney = 100;
             monsterHP = 10;
             monsterPower = 4;
-            System.out.println("Enster monster name ");
+            System.out.println("Enter monster name ");
             monsterName = sc.next();
         }
 

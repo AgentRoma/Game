@@ -52,7 +52,8 @@ public class SimpleGame {
                     System.out.println("Okay,game over have a good day");
                     break;
                 default:
-                    System.out.println("wrong answer :(, program restart");
+                    System.out.println("wrong answer :(, Game Over, please restart the program ;)");
+                    playAgain = false;
                     break;
 
             }
@@ -85,6 +86,7 @@ public class SimpleGame {
                 monsterHP -= heroPower;
             }
         } else if (chose == 2) {
+            shield();
             System.out.println("Hero " + heroName + " decide to defend himself and heald 1 point of hp");
             heroHP++;
         } else {
@@ -148,6 +150,30 @@ public class SimpleGame {
         System.out.println(" ");
 
 
+    }
+    public static void shield(){
+        xSize = 21;
+        ySize = 13;
+
+        for (int y = 0; y < ySize; y++) {
+            for (int x = 0; x < xSize; x++) {
+
+                if ((x - xSize / 6) * (x - xSize / 2) + (y - ySize / 2) * (y - ySize / 2) < 15 || x >  5 && x < 8 && y  >1 && y < 12 ) {
+                    System.out.print("|");
+                } else {
+                    System.out.print(" ");
+                }
+
+                if ( x > 4 && x < 8 && y > 4 && y < 8 || x == 6 && y > 0 && y < 12 || x > 0  && x < 12 && y == 6) {
+                    System.out.print("=");
+                } else {
+                    System.out.print(" ");
+
+                }
+            }
+            System.out.println();
+
+        }
     }
 }
 

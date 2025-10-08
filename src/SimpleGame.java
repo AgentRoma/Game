@@ -50,7 +50,7 @@ public class SimpleGame{
                 System.out.println("Okay,game over have a good day");
                 break;
             default:
-                System.out.println("wrong answer, program ended restart to play again");
+                System.out.println("wrong answer :(, program ended restart to play again");
                 break;
 
         }
